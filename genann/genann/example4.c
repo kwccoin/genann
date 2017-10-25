@@ -8,7 +8,7 @@
  * It is NOT an example of good machine learning techniques.
  */
 
-const char *iris_data = "example/iris.data";
+const char *iris_data = "/Users/blue5/Documents/GitHub-blue5/genann/genann/genann/iris.data"; // "example/iris.data";
 
 double *input, *class;
 int samples;
@@ -16,7 +16,7 @@ const char *class_names[] = {"Iris-setosa", "Iris-versicolor", "Iris-virginica"}
 
 void load_data() {
     /* Load the iris data-set. */
-    FILE *in = fopen("example/iris.data", "r");
+    FILE *in = fopen("/Users/blue5/Documents/GitHub-blue5/genann/genann/genann/iris.data","r"); //example/iris.data", "r");
     if (!in) {
         printf("Could not open file: %s\n", iris_data);
         exit(1);
@@ -66,7 +66,7 @@ void load_data() {
 }
 
 
-int main(int argc, char *argv[])
+int example4() //int argc, char *argv[])
 {
     printf("GENANN example 4.\n");
     printf("Train an ANN on the IRIS dataset using backpropagation.\n");

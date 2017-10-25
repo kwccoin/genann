@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include "genann.h"
 
-const char *save_name = "example/xor.ann";
+const char *save_name = "/Users/blue5/Documents/GitHub-blue5/genann/genann/genann/xor.ann"; // "example/xor.ann";
 
-int main(int argc, char *argv[])
+int example3() //int argc, char *argv[])
 {
     printf("GENANN example 3.\n");
     printf("Load a saved ANN to solve the XOR function.\n");
