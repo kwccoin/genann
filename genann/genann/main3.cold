@@ -21,7 +21,7 @@
  *    misrepresented as being the original software.
  * 3. This notice may not be removed or altered from any source distribution.
  *
- */
+*/
 
 #include "genann.h"
 #include "minctest.h"
@@ -34,8 +34,6 @@
 #include "example3.h"
 #include "example4.h"
 #include "example5dng.h"
-
-
 
 void basic() {
     genann *ann = genann_init(1, 0, 0, 1);
@@ -260,12 +258,12 @@ void sigmoid() {
 }
 
 
-int main(int argc, char *argv[])
+int main3(int argc, char *argv[])
 {
     printf("GENANN okok SUITE\n");
 
     srand(100);
-/*
+
     lrun("basic", basic);
     lrun("xor", xor);
     lrun("backprop", backprop);
@@ -327,8 +325,9 @@ int main(int argc, char *argv[])
     
     printf("\nexample 3 results -> %i \n\n", example3());
     printf("\nexample 4 results -> %i \n\n", example4());
-*/
+
     printf("\nexample 5dng results -> %i \n\n", example5dng());
-    
+
     return lfails != 0;
 }
+*/

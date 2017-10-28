@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		932A03FA1FA47D9A00E552C3 /* example5dng.c in Sources */ = {isa = PBXBuildFile; fileRef = 932A03F91FA47D9A00E552C3 /* example5dng.c */; };
+		932A03FD1FA4803A00E552C3 /* main3.cold in Sources */ = {isa = PBXBuildFile; fileRef = 932A03FC1FA4803A00E552C3 /* main3.cold */; };
 		9397BC091FA0E219002AA4AE /* mainOld.c in Sources */ = {isa = PBXBuildFile; fileRef = 9397BC081FA0E219002AA4AE /* mainOld.c */; };
 		9397BC301FA0E282002AA4AE /* example1.c in Sources */ = {isa = PBXBuildFile; fileRef = 9397BC231FA0E281002AA4AE /* example1.c */; };
 		9397BC311FA0E282002AA4AE /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 9397BC291FA0E281002AA4AE /* main.c */; };
@@ -29,6 +31,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		932A03F91FA47D9A00E552C3 /* example5dng.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = example5dng.c; sourceTree = "<group>"; };
+		932A03FB1FA47DB200E552C3 /* example5dng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = example5dng.h; sourceTree = "<group>"; };
+		932A03FC1FA4803A00E552C3 /* main3.cold */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main3.cold; sourceTree = "<group>"; };
 		9397BC051FA0E219002AA4AE /* genann */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = genann; sourceTree = BUILT_PRODUCTS_DIR; };
 		9397BC081FA0E219002AA4AE /* mainOld.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mainOld.c; sourceTree = "<group>"; };
 		9397BC231FA0E281002AA4AE /* example1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = example1.c; sourceTree = "<group>"; };
@@ -85,11 +90,14 @@
 				9397BC241FA0E281002AA4AE /* doc */,
 				9397BC271FA0E281002AA4AE /* example */,
 				9397BC291FA0E281002AA4AE /* main.c */,
+				932A03FC1FA4803A00E552C3 /* main3.cold */,
 				9397BC5C1FA0F0C2002AA4AE /* xor.ann */,
 				9397BC591FA0F0A0002AA4AE /* iris.data */,
 				9397BC5A1FA0F0A0002AA4AE /* iris.names */,
 				9397BC231FA0E281002AA4AE /* example1.c */,
+				932A03F91FA47D9A00E552C3 /* example5dng.c */,
 				9397BC581FA0F06F002AA4AE /* example1.h */,
+				932A03FB1FA47DB200E552C3 /* example5dng.h */,
 				9397BC2D1FA0E282002AA4AE /* example2.c */,
 				9397BC551FA0ECB9002AA4AE /* example2.h */,
 				9397BC2A1FA0E281002AA4AE /* example3.c */,
@@ -163,6 +171,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				932A03FD1FA4803A00E552C3 /* main3.cold in Sources */,
+				932A03FA1FA47D9A00E552C3 /* example5dng.c in Sources */,
 				9397BC311FA0E282002AA4AE /* main.c in Sources */,
 				9397BC341FA0E282002AA4AE /* genann.c in Sources */,
 				9397BC361FA0E282002AA4AE /* example4.c in Sources */,

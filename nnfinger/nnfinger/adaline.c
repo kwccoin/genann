@@ -98,18 +98,19 @@ REAL RandomEqualREAL(REAL Low, REAL High)
 
 
 #define NUM_DATA      10
-#define X             6 // 5
+#define X             6 // 5 is not working under Mac (as string need 6 for null ending
 #define Y             7
 
 #define N             (X * Y)
-#define M             10
+#define M             10 // M and NUM_DATA any difference ??
 
 CHAR                  Pattern[NUM_DATA][Y][X] = 
 
-//CHAR                  Pattern[NUM_DATA][][] = 
+//CHAR                  Pattern[NUM_DATA][][] =  // not working under MAC as well
 
 
 { { " OOO ", "O   O", "O   O", "O   O", "O   O", "O   O", " OOO "  },
+    
                                                   { "  O  ",
                                                     " OO  ",
                                                     "O O  ",
@@ -206,14 +207,14 @@ void InitializeApplication(NET* Net)
   Net->Eta     = 0.001;
   Net->Epsilon = 0.0001;
 
-  for (n=0; n<NUM_DATA; n++) {
-    for (i=0; i<Y; i++) {
+  for (n=0; n<NUM_DATA; n++) {   // 10 times 10 test data
+    for (i=0; i<Y; i++) {        //
       for (j=0; j<X; j++) {
         Input[n][i*X+j] = (Pattern[n][i][j] == 'O') ? HI : LO;
       }
     }
   }
-  f = fopen("ADALINE.txt", "w");
+  f = fopen("/Users/blue5/Documents/GitHub-blue5/genann/nnfinger/nnfinger/ADALINE.txt", "w"); // specified file otherwise go to debug folders ...
 }
 
 
@@ -236,7 +237,7 @@ void WriteOutput(NET* Net, INT* Output)
   INT i;
   INT Count, Index;
 
-    Index = 0; // seems no init -dennis
+    Index = 0; // seems no init of Index -dennis
     
   Count = 0;
   for (i=0; i<M; i++) {
