@@ -93,6 +93,10 @@ double const *genann_run(genann const *ann, double const *inputs);
 /* Does a single backprop update. */
 void genann_train(genann const *ann, double const *inputs, double const *desired_outputs, double learning_rate);
 
+/* Log the ann. */
+    void genann_log(int cond, char * cond_string, genann const *ann, FILE *out);
+
+    
 /* Saves the ann. */
 void genann_write(genann const *ann, FILE *out);
 

@@ -337,13 +337,27 @@ void genann_train(genann const *ann, double const *inputs, double const *desired
 }
 
 
-void genann_write(genann const *ann, FILE *out) {
-    fprintf(out, "%d %d %d %d", ann->inputs, ann->hidden_layers, ann->hidden, ann->outputs);
-
-    int i;
-    for (i = 0; i < ann->total_weights; ++i) {
-        fprintf(out, " %.20e", ann->weight[i]);
-    }
+void genann_log(int cond, char* cond_string, genann const *ann, FILE *out) {
+    if (cond) {
+        fprintf(out, "\nParameters:\ninput: %d  hidden layers: %d  hidden: %d  output: %d\n", ann->inputs, ann->hidden_layers, ann->hidden, ann->outputs);
+        
+        fprintf(out, cond_string, "\n");
+        
+        int i;
+        for (i = 0; i < ann->total_weights; ++i) {
+            fprintf(out, "%i: %.20e\n", i, ann->weight[i]);
+        }
+    };
 }
+
+void genann_write(genann const *ann, FILE *out) {
+        fprintf(out, "%d %d %d %d", ann->inputs, ann->hidden_layers, ann->hidden, ann->outputs);
+
+        int i;
+        for (i = 0; i < ann->total_weights; ++i) {
+            fprintf(out, " %.20e", ann->weight[i]);
+        }
+}
+
 
 

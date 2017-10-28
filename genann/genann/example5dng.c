@@ -4,15 +4,20 @@
 int example5dng() //int argc, char *argv[])
 {
     printf("GENANN example 5dng.\n");
-    printf("Train a small ANN to the XY function using backpropagation but not working well.\n\n");
+    printf("Train a small ANN to the XY function using backpropagation but only for 0/1 result\n\n");
 
     /* Input and expected out data for the XOR function. */
     const double input[12][2] = {{1, 2}, {-1, 2}, {1, -2}, {-1, -2},
                                  {0, 0},  {0, 1},  {1, 0},   {1, 1},
                                  {2, 3}, {-2, 3}, {2, -3}, {-2, -3}};
-    const double output[12]   = {    2,      -2,      -2,        2,
+    /* only output is 0 or 1*/
+    /* const double output[12]   = {    2,      -2,      -2,        2,
                                      0,       0,       0,        1,
                                      6,      -6,      -6,        6};
+    */
+    const double output[12]   = {    1,       0,       0,        1,
+                                     0,       0,       0,        1,
+                                     1,       0,       0,        1};
     int i;
 
     /* New network with 2 inputs,
@@ -21,9 +26,18 @@ int example5dng() //int argc, char *argv[])
     genann *ann = genann_init(2, 1, 3, 1); // 2 input and 1 hidden layer with 2 neuron and 1 output
      // change to 2,2,8,1 still not ok
 
+    FILE *fp5log;
+    fp5log = fopen("/Users/blue5/Documents/GitHub-blue5/genann/genann/genann/files/examples5dng_log1.txt", "w+");
+    
     /* Train on the four labeled data points many times. */
-    for (i = 0; i < 30000; ++i) {  // change from 300 to 3000 to 300000 not help
+    int trainNo = 3000;
+    for (i = 0; i < (trainNo +1); ++i) {  // change from 300 to 3000 to 300000 not help
         genann_train(ann, input[0],  output + 0,  3); // 3 to 0.3 not help
+        if ( (i < 2) || (i = trainNo) ) {
+            genann_log((i==0), "train cycle 0 after [0] training\n\n", ann, fp5log);
+            genann_log((i==1), "train cycle 1 after [0] training\n\n", ann, fp5log);
+            genann_log((i==trainNo), "train cycle end after [0] training\n\n", ann, fp5log);
+        };
         genann_train(ann, input[1],  output + 1,  3); // try 30 not ok and the first 4 predict wrongly
         genann_train(ann, input[2],  output + 2,  3);
         genann_train(ann, input[3],  output + 3,  3);
@@ -35,8 +49,16 @@ int example5dng() //int argc, char *argv[])
         genann_train(ann, input[9],  output + 9,  3);
         genann_train(ann, input[10], output + 10, 3);
         genann_train(ann, input[11], output + 11, 3);
+        if (i < 2) {
+            genann_log((i==0), "train cycle 0 after [11] training\n\n", ann, fp5log);
+            genann_log((i==1), "train cycle 1 after [11] training\n\n", ann, fp5log);
+            genann_log((i==trainNo), "train cycle end after [11] training\n\n", ann, fp5log);
+        };
+
     }
 
+    fclose(fp5log);
+    
     /* Run the network and see what it predicts. */
     printf("example5dng - Output for [%1.f, %1.f] is %1.f.\n", input[0][0], input[0][1], *genann_run(ann, input[0]));
     printf("example5dng - Output for [%1.f, %1.f] is %1.f.\n", input[1][0], input[1][1], *genann_run(ann, input[1]));
