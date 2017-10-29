@@ -35,7 +35,7 @@
 #include "example4.h"
 #include "example5dng.h"
 
-void basic() {
+void basic3() {
     genann *ann = genann_init(1, 0, 0, 1);
 
     lequal(ann->total_weights, 2);
@@ -70,7 +70,7 @@ void basic() {
 }
 
 
-void xor() {
+void xor3() {
     genann *ann = genann_init(2, 1, 2, 1);
     ann->activation_hidden = genann_act_threshold;
     ann->activation_output = genann_act_threshold;
@@ -105,7 +105,7 @@ void xor() {
 }
 
 
-void backprop() {
+void backprop3() {
     genann *ann = genann_init(1, 0, 0, 1);
 
     double input, output;
@@ -121,7 +121,7 @@ void backprop() {
 }
 
 
-void train_and() {
+void train_and3() {
     double input[4][2] = {{0, 0}, {0, 1}, {1, 0}, {1, 1}};
     double output[4] = {0, 0, 0, 1};
 
@@ -145,7 +145,7 @@ void train_and() {
 }
 
 
-void train_or() {
+void train_or3() {
     double input[4][2] = {{0, 0}, {0, 1}, {1, 0}, {1, 1}};
     double output[4] = {0, 1, 1, 1};
 
@@ -171,7 +171,7 @@ void train_or() {
 
 
 
-void train_xor() {
+void train_xor3() {
     double input[4][2] = {{0, 0}, {0, 1}, {1, 0}, {1, 1}};
     double output[4] = {0, 1, 1, 0};
 
@@ -197,7 +197,7 @@ void train_xor() {
 
 
 
-void persist() {
+void persist3() {
     genann *first = genann_init(1000, 5, 50, 10);
 
     FILE *out = fopen("/Users/blue5/Documents/GitHub-blue5/genann/genann/genann/files/persist.txt", "w");
@@ -225,7 +225,7 @@ void persist() {
 }
 
 
-void copy() {
+void copy3() {
     genann *first = genann_init(1000, 5, 50, 10);
 
     genann *second = genann_copy(first);
@@ -246,7 +246,7 @@ void copy() {
 }
 
 
-void sigmoid() {
+void sigmoid3() {
     double i = -20;
     const double max = 20;
     const double d = .0001;
@@ -330,4 +330,4 @@ int main3(int argc, char *argv[])
 
     return lfails != 0;
 }
-*/
+

@@ -33,6 +33,7 @@
 #include "example2.h"
 #include "example3.h"
 #include "example4.h"
+#include "example4dng.h"
 #include "example5dng.h"
 
 
@@ -327,8 +328,12 @@ int main(int argc, char *argv[])
     
     printf("\nexample 3 results -> %i \n\n", example3());
     printf("\nexample 4 results -> %i \n\n", example4());
-*/
+ 
     printf("\nexample 5dng results -> %i \n\n", example5dng());
+ 
+*/
+    
+    printf("\nexample 4 dng results -> %i \n\n", example4dng());
     
     return lfails != 0;
 }
